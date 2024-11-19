@@ -13,7 +13,6 @@ const shopOrderRouter = require("./routes/shop/order-routes");
 const shopSearchRouter = require("./routes/shop/search-routes");
 const shopReviewRouter = require("./routes/shop/review-routes");
 require('dotenv').config();
-const cors = require('cors');
 const commonFeatureRouter = require("./routes/common/feature-routes");
 
 //create a database connection -> u can also
@@ -28,7 +27,7 @@ const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: ['https://shopp-9spg.onrender.com', 'http://localhost:5173'],
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
       "Content-Type",
